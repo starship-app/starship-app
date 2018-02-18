@@ -57,7 +57,7 @@ $ git config --global user.email
 youremail@email.example.edu
 ```
 
-#### Install Node.js 5.X
+### Install Node.js
 
 ```
 sudo apt install curl
@@ -66,7 +66,7 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 ```
 
-#### Install MongoDB 3.4
+### Install MongoDB 3.4
 
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
@@ -101,13 +101,13 @@ Shut down MongoDB for now with:
 sudo service mongod stop
 ```
 
-#### Clone the Starship App repository
+### Clone the Starship App repository
 
 ```
 git clone https://github.com/starship-app/starship-app.git
 ```
 
-#### Install dependencies
+### Install dependencies
 
 Change into the newly cloned starship app and install dependencies:
 ```
@@ -119,7 +119,7 @@ Install the React dependencies by changing into the ``client`` folder as well:
 npm install
 ```
 
-#### Begin local development
+### Begin local development
 
 This is the procedure everytime to setup your development environment:
 
@@ -128,12 +128,12 @@ Start MongoDB:
 sudo service mongod start
 ```
 
-Start the Express server in the main project directory on port 3001. This command tells node to use port 3001 to avoid port conflicts with the default port 3000 that React will use.
+Start the Express server in the main project directory.
 ```
-PORT=3001 node bin/www
+npm run devstart
 ```
 
-Got to http://localhost:3001 to make sure your Express server is up and running.
+Got to http://localhost:3001 to see the Express server.
 
 Open another terminal. Start the React client side development proxy to Express by first changing into the React directory in the ``client`` folder. Run the React server with:
 
