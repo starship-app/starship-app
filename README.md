@@ -5,7 +5,7 @@ Starship is a inventory ordering system built with React, Express, Node.js, and 
 ## Built With
 
 * React      16.2.0
-* Express.js 4.16.1
+* Express.js 4.15.5
 * Node.js    8.9.4
 * MongoDB    3.4
 * Database from mLab
