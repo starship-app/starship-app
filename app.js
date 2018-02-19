@@ -5,10 +5,25 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// require the mongoose module
+var mongoose = require('mongoose');
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+// setup production and development mongoose connection
+var mongoDB = process.env.MONGODB_URI || 'monogodb://127.0.0.1/starship-db-dev'
+mongoose.connect(mongoDB);
+
+// get mongoose to use global promise library
+mongoose.Promise = global.Promise;
+// get default connection
+var db = mongoose.connection;
+
+// check db connection for errors
+db.on('error', console.error.bind(console, 'MongoDB connection error: '));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
