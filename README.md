@@ -23,7 +23,7 @@ Note: sudo usage is implied for most commands requiring root.
 
 Git is the version control system used to manage the source code for this project as well pushing to both of the Git repositories on GitHub and Heroku.
 
-#### Installing Git
+#### [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ```
 sudo apt install git
@@ -57,7 +57,7 @@ $ git config --global user.email
 youremail@email.example.edu
 ```
 
-### Install Node.js
+### [Install Node.js](https://nodejs.org/en/download/package-manager/#macos)
 
 ```
 sudo apt install curl
@@ -66,7 +66,7 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 ```
 
-### Install MongoDB 3.4
+### [Install MongoDB 3.4](https://docs.mongodb.com/tutorials/install-mongodb-on-os-x/)
 
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
