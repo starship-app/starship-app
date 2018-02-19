@@ -13,7 +13,7 @@ Starship is a inventory ordering system built with React, Express, Node.js, and 
 
 ## Getting Started
 
-These instructions are assuming a new Ubuntu 16.04 install in a VM for the purposes of this project and its dependencies. Commands for MacOS and other Linux distributions will differ.
+These instructions are assuming a new Ubuntu 16.04 install in a VM for the purposes of this project and its dependencies. Commands for macOS included in the section titles for that section's equivalent instructions. Other Linux distributions will differ.
 
 ```
 Note: sudo usage is implied for most commands requiring root.
