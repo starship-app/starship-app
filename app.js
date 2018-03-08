@@ -13,6 +13,8 @@ var users = require('./routes/users');
 
 var app = express();
 
+// replaced views with React
+
 // setup production and development mongoose connection
 var mongoDB = process.env.MONGODB_URI || 'monogodb://127.0.0.1/starship-db-dev'
 mongoose.connect(mongoDB);
@@ -24,11 +26,6 @@ var db = mongoose.connection;
 
 // check db connection for errors
 db.on('error', console.error.bind(console, 'MongoDB connection error: '));
-
-// comment out view engine for React
-// view engine setup
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
