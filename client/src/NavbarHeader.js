@@ -14,10 +14,10 @@ export default class NavbarHeader extends Component {
         <Navbar.Collapse>
           <Nav pullRight>
             <NavItem eventKey={1} href="#">
-              Sign In
+              Sign In!
             </NavItem>
             <NavItem eventKey={2} href="#">
-              Sign Up
+              Sign Up!
             </NavItem>
           </Nav>
         </Navbar.Collapse>
