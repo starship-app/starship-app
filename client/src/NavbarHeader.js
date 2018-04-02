@@ -17,7 +17,7 @@ export default class NavbarHeader extends Component {
               Sign In
             </NavItem>
             <NavItem eventKey={2} href="#">
-              Sign Up Now
+              Sign Up
             </NavItem>
           </Nav>
         </Navbar.Collapse>
