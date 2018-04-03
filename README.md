@@ -11,6 +11,13 @@ Starship is a inventory ordering system built with React, Express, Node.js, and 
 * Database from mLab
 * Deployed on Heroku
 
+## Table of Contents
+1. [Getting Started](#getting-started)
+2. [Begin Local Development](#begin-local-development)
+3. [Project File Structure](#project-file-structure)
+4. [Tutorials](#tutorials)
+5. [Git Workflow](#git-workflow)
+
 ## Getting Started
 
 These instructions are assuming a new Ubuntu 16.04 install in a VM for the purposes of this project and its dependencies. Commands for macOS included in the section titles for that section's equivalent instructions. Other Linux distributions will differ.
@@ -26,7 +33,9 @@ Note: sudo usage is implied for most commands requiring root.
 
 Git is the version control system used to manage the source code for this project as well pushing to both of the Git repositories on GitHub and Heroku.
 
-#### [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+#### Installing Git 
+
+[macOS instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ```
 sudo apt install git
@@ -35,7 +44,7 @@ sudo apt install git
 Set your Git username:
 
 ```
-$ git config --global user.name "Your Name"
+git config --global user.name "Your Name"
 ```
 
 Confirm that you set your Git username correctly:
@@ -60,7 +69,9 @@ $ git config --global user.email
 youremail@email.example.edu
 ```
 
-### [Install Node.js](https://nodejs.org/en/download/package-manager/#macos)
+### Install Node.js
+
+[macOS instructions](https://nodejs.org/en/download/package-manager/#macos)
 
 ```
 sudo apt install curl
@@ -69,7 +80,9 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 ```
 
-### [Install MongoDB 3.4](https://docs.mongodb.com/tutorials/install-mongodb-on-os-x/)
+### Install MongoDB 3.4 
+
+[macOS instructions](https://docs.mongodb.com/tutorials/install-mongodb-on-os-x/)
 
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
@@ -190,6 +203,84 @@ These are the most up to date documentation and tutorials available and all that
 * [Create-React-App Documentation](https://github.com/facebook/create-react-app)
 * [React Documentation](https://reactjs.org/docs/hello-world.html)
 * [Express Documentation](http://expressjs.com/en/guide/routing.html)
+
+## Git Workflow
+
+For the purposes of this project we will directly push code to our repository individually since it is a small project. A guide to proper git workflow in the industry is included at the end of this section.
+
+Create a working branch to develop in:
+```
+git checkout -b your-named-branch
+```
+
+Verify you are in your newly created branch, and not the master branch:
+```
+$ git branch
+  master
+* your-named-branch
+```
+
+Develop and test thigs out in your working branch. Once you have made some small logical progress, remember to add changes and commit often.
+
+Check unadded changes in your codebase with:
+```
+git status
+```
+
+
+Add all red unadded changes with ``add .`` or ``add -A``. Refer to the linked git documentation in the git section above for more specific add commands. Or use ``git help``.
+```
+git add .
+```
+
+Can commit and write a commit message with the shorthand:
+```
+git commit -m "Add two-factor authentication"
+```
+
+Switch back to your local master branch:
+```
+git checkout master
+```
+
+Fetch any new changes from the remote repository (GitHub):
+```
+git fetch
+```
+
+Now check for any changes or merge conflicts you think might occur with:
+```
+git status
+git diff
+```
+
+Merge the fetched changes:
+```
+git merge
+```
+
+Merge your changes from your working branch into master assuming no conflicts:
+```
+git merge your-named-branch
+```
+
+Check that your local master branch is now ahead:
+```
+git status
+```
+
+Push up to the remote repository:
+```
+git push
+```
+
+Create a working branch to work in for another cycle of development:
+```
+git checkout -b new-branch-of-features
+```
+
+Here is an actual git workflow for the real world such as open source contributions: [Git Workflow](https://guides.github.com/introduction/flow/)
+
 
 ## License
 
