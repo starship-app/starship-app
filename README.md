@@ -205,6 +205,7 @@ These are the most up to date documentation and tutorials available and all that
 * [Create-React-App Documentation](https://github.com/facebook/create-react-app)
 * [React Documentation](https://reactjs.org/docs/hello-world.html)
 * [Express Documentation](http://expressjs.com/en/guide/routing.html)
+* [React-Router](https://reacttraining.com/react-router/web/guides/philosophy)
 
 ## Git Workflow
 
