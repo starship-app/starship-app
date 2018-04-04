@@ -10,6 +10,8 @@ var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+// import the starship routes
+var starship = require('./routes/starship.routes');
 
 var app = express();
 
@@ -39,6 +41,8 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use('/', index);
 app.use('/users', users);
+// add starship routes
+app.use('/', starship);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -59,3 +63,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+

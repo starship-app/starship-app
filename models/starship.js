@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var Schema = mongoose.Scheme;
+var Schema = mongoose.Schema;
 
 var StarshipSchema = new Schema(
   {
@@ -11,10 +11,10 @@ var StarshipSchema = new Schema(
     crew: Number,
     passenger: Number,
     length: Number,
-    manufacturer: String
+    manufacturer: String,
     cost: Number
   }
 );
 
-
+module.exports = mongoose.model('Starship', StarshipSchema);
 
