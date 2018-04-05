@@ -18,7 +18,7 @@ class App extends Component {
           <div>
             <NavbarHeader/>
 
-            <div class="container">
+            <div className="container">
               <Switch>
                 <Route exact path="/" component={Home} />       
                 <Route path="/starship/create" component={StarshipForm} />

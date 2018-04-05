@@ -30,11 +30,17 @@ export default class StarshipForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const data = new FormData(event.target);
-
+    const data = {
+      name: this.state.name,
+      shiptype: this.state.shiptype,
+      shipclass: this.state.shipclass
+    }
     fetch('/starship/create', {
       method: 'POST',
-      body: data
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
 
   }
