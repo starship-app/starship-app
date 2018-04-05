@@ -18,7 +18,7 @@ var app = express();
 // replaced views with React
 
 // setup production and development mongoose connection
-var mongoDB = process.env.MONGODB_URI || 'monogodb://127.0.0.1/starship-db-dev'
+var mongoDB = process.env.MONGODB_URI || 'mongodb://127.0.0.1/starship-db-dev'
 mongoose.connect(mongoDB);
 
 // get mongoose to use global promise library
