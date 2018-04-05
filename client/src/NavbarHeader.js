@@ -14,14 +14,11 @@ export default class NavbarHeader extends Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullLeft>
-            <NavItem eventKey={1} href="#">
-              Inventory List
+            <NavItem componentClass={Link} href="/starships" to="/starships">
+              Starship Inventory
             </NavItem>
             <NavItem componentClass={Link} href="/starship/create" to="/starship/create">
-              Create Starship Test 1
-            </NavItem>
-            <NavItem eventKey={2} href="#">
-              Create Starship Test 2
+              Add Starship
             </NavItem>
           </Nav>
         </Navbar.Collapse>

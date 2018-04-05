@@ -9,6 +9,7 @@ import { BrowserRouter as Router,
 import NavbarHeader from './NavbarHeader';
 import Home from './Home';
 import StarshipForm from './StarshipForm';
+import StarshipList from './StarshipList';
 
 class App extends Component {
   render() {
@@ -20,7 +21,8 @@ class App extends Component {
 
             <div className="container">
               <Switch>
-                <Route exact path="/" component={Home} />       
+                <Route exact path="/" component={Home} />
+                <Route path="/starships" component={StarshipList} />
                 <Route path="/starship/create" component={StarshipForm} />
               </Switch>
             </div>
