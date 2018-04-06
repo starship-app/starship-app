@@ -2,7 +2,7 @@ var Starship = require('../models/starship');
 
 // GET: Get list of all starships
 exports.starship_list = function(req, res) {
-    Starship.find().exec((err, starships) => {
+    Starship.find(function (err, starships) {
       if (err) {
         res.status(500).send(err);
       }
