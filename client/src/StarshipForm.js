@@ -3,6 +3,7 @@ import { FormGroup,
          ControlLabel,
          FormControl,
          Button } from 'react-bootstrap';
+import { Redirect } from "react-router-dom";
 
 
 export default class StarshipForm extends Component {
@@ -12,7 +13,10 @@ export default class StarshipForm extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      // this is a flag for redirect after POST
+      redirectAfterSubmit: false
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,50 +46,56 @@ export default class StarshipForm extends Component {
         'Content-Type': 'application/json'
       }
     });
-
+    this.setState({ redirectAfterSubmit: true })
   }
 
   render() {
+    const { redirectAfterSubmit } = this.state
+
     return (
-      <form onSubmit={this.handleSubmit}>
-        <FormGroup>
-          <ControlLabel>Starship Name</ControlLabel>
-          <FormControl
-            id="formControlsName"
-            type="text"
-            label="Starship Name"
-            placeholder="Enter starship designation"
-            value={this.state.name}
-            onChange={this.handleChange}
-            name="name"
-          />
-        </FormGroup>
-        <FormGroup>
-          <ControlLabel>Starship Type</ControlLabel>
-          <FormControl
-            id="formControlsShipType"
-            type="text"
-            label="StarshipType"
-            placeholder="Enter starship ship type (e.g. Interceptor)"
-            value={this.state.shiptype}
-            onChange={this.handleChange}
-            name="shiptype"
-          />
-        </FormGroup>
-        <FormGroup>
-          <ControlLabel>Starship Class</ControlLabel>
-          <FormControl
-            id="formControlsShipClass"
-            type="text"
-            label="StarshipClass"
-            placeholder="Enter starship class type (e.g. Capital Class)"
-            value={this.state.shipclass}
-            onChange={this.handleChange}
-            name="shipclass"
-          />
-        </FormGroup>
-        <Button type="submit">Submit</Button>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <FormGroup>
+            <ControlLabel>Starship Name</ControlLabel>
+            <FormControl
+              id="formControlsName"
+              type="text"
+              label="Starship Name"
+              placeholder="Enter starship designation"
+              value={this.state.name}
+              onChange={this.handleChange}
+              name="name"
+            />
+          </FormGroup>
+          <FormGroup>
+            <ControlLabel>Starship Type</ControlLabel>
+            <FormControl
+              id="formControlsShipType"
+              type="text"
+              label="StarshipType"
+              placeholder="Enter starship ship type (e.g. Interceptor)"
+              value={this.state.shiptype}
+              onChange={this.handleChange}
+              name="shiptype"
+            />
+          </FormGroup>
+          <FormGroup>
+            <ControlLabel>Starship Class</ControlLabel>
+            <FormControl
+              id="formControlsShipClass"
+              type="text"
+              label="StarshipClass"
+              placeholder="Enter starship class type (e.g. Capital Class)"
+              value={this.state.shipclass}
+              onChange={this.handleChange}
+              name="shipclass"
+            />
+          </FormGroup>
+          <Button type="submit">Submit</Button>
+        </form>
+
+        { redirectAfterSubmit && (<Redirect to='/starships'/>) }
+      </div>
     );
   }
 }
