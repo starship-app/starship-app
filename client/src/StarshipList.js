@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Panel,
          ListGroup,
          ListGroupItem } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 
 export default class StarshipList extends Component {
@@ -32,17 +34,14 @@ export default class StarshipList extends Component {
       <Panel>
         <Panel.Heading>
           <Panel.Title componentClass="h3">
-            { starship.name }
+            <Link to={`/starships/${starship._id}`}>
+              { starship.name }
+            </Link>
           </Panel.Title>
         </Panel.Heading>
-        <Panel.Body>Ship Description</Panel.Body>
         <ListGroup>
           <ListGroupItem>Ship Type: { starship.shiptype }</ListGroupItem>
           <ListGroupItem>Ship Class: { starship.shipclass }</ListGroupItem>
-          <ListGroupItem>Ship Attr: {  }</ListGroupItem>
-          <ListGroupItem>Ship Attr: {  }</ListGroupItem>
-          <ListGroupItem>Ship Attr: {  }</ListGroupItem>
-          <ListGroupItem>Ship Attr: {  }</ListGroupItem>
         </ListGroup>
       </Panel>
     );

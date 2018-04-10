@@ -10,6 +10,7 @@ import NavbarHeader from './NavbarHeader';
 import Home from './Home';
 import StarshipForm from './StarshipForm';
 import StarshipList from './StarshipList';
+import StarshipDetails from './StarshipDetails';
 
 class App extends Component {
   render() {
@@ -22,8 +23,10 @@ class App extends Component {
             <div className="container">
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/starships" component={StarshipList} />
+                <Route exact path="/starships" component={StarshipList} />
                 <Route path="/starship/create" component={StarshipForm} />
+                <Route exact path="/starships/:id" component={StarshipDetails} />
+                <Route component={Home} />
               </Switch>
             </div>
 

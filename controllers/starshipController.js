@@ -11,6 +11,17 @@ exports.starship_list = function(req, res) {
     });
 };
 
+// GET: Get single starship by id
+exports.starship_find_by_id = function(req, res) {
+    Starship.findById(req.params.id, function (err, starship) {
+      console.log(req.params.id);
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.json({ starship });
+    });
+};
+
 // POST: Create a starship
 exports.starship_create_post = function(req, res) {
     const newStarship = new Starship();
