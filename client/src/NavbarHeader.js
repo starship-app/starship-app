@@ -8,7 +8,7 @@ export default class NavbarHeader extends Component {
       <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">Starship App</Link>
+            <Link to="/">Elite Enterprises</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
