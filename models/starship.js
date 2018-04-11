@@ -12,7 +12,10 @@ var StarshipSchema = new Schema(
     passenger: Number,
     length: Number,
     manufacturer: String,
-    cost: Number
+    cost: Number,
+    hangar: String,
+    dock: String,
+    year: Number
   }
 );
 

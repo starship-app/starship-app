@@ -3,7 +3,7 @@ import { Panel,
          ListGroup,
          ListGroupItem,
          Button } from 'react-bootstrap';
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 export default class StarshipDetails extends Component {
 
@@ -59,7 +59,13 @@ export default class StarshipDetails extends Component {
             <ListGroupItem>Ship Attr: {  }</ListGroupItem>
           </ListGroup>
           <Panel.Footer>
-            <Button bsStyle="danger" bsSize="xsmall" onClick={this.handleDelete}>
+            <Button bsStyle="primary"
+                    componentClass={Link}
+                    href={`/starships/edit/${this.state.ship._id}`}
+                    to={`/starships/edit/${this.state.ship._id}`}>
+              Edit
+            </Button>
+            <Button className="pull-right" bsStyle="danger" bsSize="xsmall" onClick={this.handleDelete}>
               Delete
             </Button>
           </Panel.Footer>

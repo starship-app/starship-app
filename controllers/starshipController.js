@@ -50,4 +50,14 @@ exports.starship_delete = function(req, res) {
   });
 };
 
+//PUT: Update a starship by id
+exports.starship_update = function(req, res) {
+  Starship.findByIdAndUpdate(req.params.id, req.body, function (err, starship) {
+    if (err) {
+      res.status(500).send(err);
+    }
+
+    res.json({ starship });
+  });
+};
 

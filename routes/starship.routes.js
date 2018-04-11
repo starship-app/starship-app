@@ -15,5 +15,8 @@ router.post('/starship/create', starship_controller.starship_create_post);
 // DELETE a Starship by id
 router.delete('/starships/:id', starship_controller.starship_delete);
 
+// PUT a Starship by id
+router.put('/starships/edit/:id', starship_controller.starship_update);
+
 module.exports = router;
 

@@ -9,3 +9,7 @@ body {
 nav.navbar.navbar-inverse {
 
 }
+
+.panel-body {
+  font-style: italic;
+}
