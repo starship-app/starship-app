@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { Panel,
          ListGroup,
-         ListGroupItem } from 'react-bootstrap';
+         ListGroupItem,
+         Button } from 'react-bootstrap';
+import { Redirect } from "react-router-dom";
 
 export default class StarshipDetails extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      ship: []
+      ship: [],
+      // this is a flag for redirect after DELETE
+      redirectAfterDelete: false
     };
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -26,7 +32,17 @@ export default class StarshipDetails extends Component {
       });
   }
 
+  handleDelete(event) {
+    fetch(('/starships/'+this.props.match.params.id), {
+      method: 'DELETE'
+    });
+
+    this.setState({ redirectAfterDelete: true })
+  }
+
   render() {
+    const { redirectAfterDelete } = this.state
+
     return (
       <div>
         <Panel>
@@ -42,7 +58,13 @@ export default class StarshipDetails extends Component {
             <ListGroupItem>Ship Attr: {  }</ListGroupItem>
             <ListGroupItem>Ship Attr: {  }</ListGroupItem>
           </ListGroup>
+          <Panel.Footer>
+            <Button bsStyle="danger" bsSize="xsmall" onClick={this.handleDelete}>
+              Delete
+            </Button>
+          </Panel.Footer>
         </Panel>
+        { redirectAfterDelete && (<Redirect to='/starships'/>) }
       </div>
     );
   }

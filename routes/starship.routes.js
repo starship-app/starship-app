@@ -12,5 +12,8 @@ router.get('/starships/:id', starship_controller.starship_find_by_id);
 // POST request for creating a Starship
 router.post('/starship/create', starship_controller.starship_create_post);
 
+// DELETE a Starship by id
+router.delete('/starships/:id', starship_controller.starship_delete);
+
 module.exports = router;
 
